@@ -19,10 +19,10 @@ spec:
       preStop:
         exec:
           command: #["bash", "/sh/stop.sh"]
-          - bash
-          - /sh/stop.sh
-            #- touch
-            #- terminate.dat
+          #- bash
+          #- /sh/stop.sh
+          - touch
+          - terminate.dat
     livenessProbe:
       initialDelaySeconds: 2
       periodSeconds: 1
