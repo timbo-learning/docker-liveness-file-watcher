@@ -5,9 +5,9 @@ metadata:
   labels:
 
 spec:
-  volumes:
-  - name: liveness-data
-    emptyDir: {}
+  #volumes:
+  #- name: liveness-data
+  #  emptyDir: {}
 
   containers:
   - name: timbo-watch-ctr
@@ -21,8 +21,8 @@ spec:
           command: #["bash", "/sh/stop.sh"]
           - bash
           - /sh/stop.sh
-          - touch
-          - terminate.dat
+            #- touch
+            #- terminate.dat
     livenessProbe:
       initialDelaySeconds: 2
       periodSeconds: 1
