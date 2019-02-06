@@ -14,7 +14,7 @@ main() {
   # assumes it is safe to kill the container )
   # After the application has terminated, this
   # script will terminate as well.
-  sleep 10m
+  sleep 2s
 }
 
 main "$@"
