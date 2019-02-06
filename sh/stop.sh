@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash 
 
 # Treat unset variables as errors
 set -o nounset 
