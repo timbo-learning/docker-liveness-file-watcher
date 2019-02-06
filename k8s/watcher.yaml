@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: timbo-watch
+  labels:
+
+spec:
+  volumes:
+  - name: liveness-data
+    emptyDir: {}
+
+  containers:
+  - name: timbo-watch-ctr
+    image: localhost:5000/timbo/alive
+    #volumeMounts:
+    #- name: liveness-data
+    #  mountPath: /alive
+    lifecycle:
+      preStop:
+        exec:
+          command: #["bash", "/sh/stop.sh"]
+          - bash
+          - /sh/stop.sh
+          - touch
+          - terminate.dat
+    livenessProbe:
+      initialDelaySeconds: 2
+      periodSeconds: 1
+      exec:
+        command:
+        - bash
+        - /sh/alive.sh
