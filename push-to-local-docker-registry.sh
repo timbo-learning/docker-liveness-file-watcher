@@ -18,6 +18,7 @@
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
+set -x
 
 docker build -t timbo/alive .
 docker stop registry
