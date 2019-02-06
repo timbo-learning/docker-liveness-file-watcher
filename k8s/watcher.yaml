@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: timbo-watch
   labels:
+    timbo: test
 
 spec:
   #volumes:
@@ -11,7 +12,7 @@ spec:
 
   containers:
   - name: timbo-watch-ctr
-    image: localhost:5000/timbo/alive:30xfaulty
+    image: localhost:5000/timbo/alive
     #volumeMounts:
     #- name: liveness-data
     #  mountPath: /alive
@@ -25,7 +26,7 @@ spec:
           - terminate.dat
           - sleep 3s
     livenessProbe:
-      initialDelaySeconds: 2
+      initialDelaySeconds: 5
       periodSeconds: 1
       exec:
         command:

@@ -32,9 +32,9 @@ _sleep() {
   sleep $sleep_time
   # After 4 times, sleep longer
   # to emulate unresponsiveness.
-  if [[ $times_refreshed -ge $TIMES_TO_TURN_UNRESPONSIVE ]]; then
-    sleep_time=$((3*REFRESH_TIME))
-  fi
+  #if [[ $times_refreshed -ge $TIMES_TO_TURN_UNRESPONSIVE ]]; then
+  #  sleep_time=$((3*REFRESH_TIME))
+  #fi
 }
 main() {
 		while true; do
