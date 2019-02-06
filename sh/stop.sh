@@ -4,7 +4,7 @@
 set -o nounset 
 
 # Load common functions and constants
-# source ./scripts/shared.sh
+# source ./sh/shared.sh
 
 main() {
   # Create the termination file

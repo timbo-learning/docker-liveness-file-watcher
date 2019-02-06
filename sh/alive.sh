@@ -4,7 +4,7 @@
 set -o nounset                              
 
 # Load common functions and constants
-source ./scripts/shared.sh
+source ./sh/shared.sh
 
 # List of errors
 ERR_NOT_ALIVE=1

@@ -19,7 +19,7 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-source ./scripts/shared.sh
+source ./sh/shared.sh
 
 
 create_initial_alive_file() {
@@ -29,7 +29,7 @@ create_initial_alive_file() {
 }
 
 run_app() {
-  ./scripts/watch.sh
+  ./sh/watch.sh
 }
 
 main() {

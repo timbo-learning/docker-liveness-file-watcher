@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source scripts/shared.sh
+source sh/shared.sh
 
 refresh() {
   read_alive_time
