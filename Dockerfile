@@ -1,4 +1,4 @@
 FROM ubuntu
 
-COPY scripts /scripts
-CMD /scripts/start.sh
+COPY sh /sh
+CMD /sh/start.sh
