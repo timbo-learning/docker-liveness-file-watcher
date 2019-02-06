@@ -23,6 +23,7 @@ spec:
           #- /sh/stop.sh
           - touch
           - terminate.dat
+          - sleep 3s
     livenessProbe:
       initialDelaySeconds: 2
       periodSeconds: 1
