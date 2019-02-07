@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: timbo-fwatch
+  labels:
+    app: faulty-watch
+    timbo: watch-replica
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      timbo: watch-faulty
+  template:
+    metadata:
+      labels:
+        timbo: watch-faulty
+    spec:
+      # Copied from watcher.yaml
+      containers:
+      - name: timbo-watch-ctr
+        image: timborafa/k8s-liveness-probe:hangs-after-1m
+        lifecycle:
+          preStop:
+            exec:
+              command: ["/bin/bash", "-c", "/sh/stop.sh"]
+        livenessProbe:
+          initialDelaySeconds: 5 #reality 10 to 15s
+          periodSeconds: 1
+          exec:
+            command:
+            - bash
+            - /sh/alive.sh
