@@ -48,9 +48,9 @@ main() {
     work
   done
 
-  echo "$$ watch.sh: Delaying termination for $DELAY_BEFORE_TERMINATION"
+  echo "$$ watch.sh: Emulating termination work for ${DELAY_BEFORE_TERMINATION}s"
   sleep $DELAY_BEFORE_TERMINATION
-  echo "$$ watch.sh: Gracefully terminating"
+  echo "$$ watch.sh: Terminated gracefully"
 }
 
 
