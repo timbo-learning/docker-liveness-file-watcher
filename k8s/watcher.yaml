@@ -12,7 +12,8 @@ spec:
 
   containers:
   - name: timbo-watch-ctr
-    image: localhost:5000/timbo/alive
+    image: timborafa/k8s-liveness-probe:latest
+    #image: localhost:5000/timbo/alive
     #volumeMounts:
     #- name: liveness-data
     #  mountPath: /alive
