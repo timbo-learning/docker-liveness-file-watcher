@@ -46,7 +46,7 @@ main() {
     refresh
     work
   done
-  echo "watch.sh terminating"
+  echo "$$ watch.sh: Gracefully terminating"
 }
 
 
