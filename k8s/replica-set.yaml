@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: timbo-rwatch
+  labels:
+    app: rs-watch
+    timbo: watch-pod
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      timbo: watch-pod
+  template:
+    metadata:
+      labels:
+        timbo: watch-pod
+    spec:
+      containers:
+      - name: rwatch
+        image: host.docker.internal:5000/timbo/alive

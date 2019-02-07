@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: timbo-watch
   labels:
-    timbo: test
+    timbo: watch-pod
 
 spec:
   #volumes:
