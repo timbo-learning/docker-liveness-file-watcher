@@ -4,17 +4,17 @@ metadata:
   name: timbo-rwatch
   labels:
     app: rs-watch
-    timbo: watch-pod
+    timbo: watch-replica
 spec:
   # modify replicas according to your case
   replicas: 3
   selector:
     matchLabels:
-      timbo: watch-pod
+      timbo: watch-replica
   template:
     metadata:
       labels:
-        timbo: watch-pod
+        timbo: watch-replica
     spec:
       containers:
       - name: rwatch
