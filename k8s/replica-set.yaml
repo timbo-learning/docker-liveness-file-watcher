@@ -16,6 +16,18 @@ spec:
       labels:
         timbo: watch-replica
     spec:
+      # Copied from watcher.yaml
       containers:
-      - name: rwatch
+      - name: timbo-watch-ctr
         image: timborafa/k8s-liveness-probe:latest
+        lifecycle:
+          preStop:
+            exec:
+              command: ["/bin/bash", "-c", "/sh/stop.sh"]
+        livenessProbe:
+          initialDelaySeconds: 5 #reality 10 to 15s
+          periodSeconds: 1
+          exec:
+            command:
+            - bash
+            - /sh/alive.sh
