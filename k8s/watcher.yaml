@@ -20,12 +20,12 @@ spec:
     lifecycle:
       preStop:
         exec:
-          command: ["/bin/bash", "-c", "/sh/stop.sh"]
+          command: #["/bin/bash", "-c", "/sh/stop.sh"]
           #- bash
           #- /sh/stop.sh
           #
-          #- touch
-          #- terminate.dat  
+          - touch
+          - terminate.dat
           #- sleep 3s
     livenessProbe:
       initialDelaySeconds: 5 #reality 10 to 15s
