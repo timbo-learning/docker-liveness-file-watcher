@@ -18,4 +18,4 @@ spec:
     spec:
       containers:
       - name: rwatch
-        image: host.docker.internal:5000/timbo/alive
+        image: timborafa/k8s-liveness-probe:latest
