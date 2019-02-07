@@ -3,6 +3,7 @@
 source sh/shared.sh
 
 TIMES_TO_TURN_UNRESPONSIVE=30
+DELAY_BEFORE_TERMINATION=10
 
 refresh() {
   read_alive_time
@@ -46,6 +47,9 @@ main() {
     refresh
     work
   done
+
+  echo "$$ watch.sh: Delaying termination for $DELAY_BEFORE_TERMINATION"
+  sleep $DELAY_BEFORE_TERMINATION
   echo "$$ watch.sh: Gracefully terminating"
 }
 
