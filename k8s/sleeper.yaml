@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: timbo-sleeper
+  labels:
+    app: timbo-sleeper
+    timbo: sleeper
+spec:
+  # modify replicas according to your case
+  replicas: 2
+  selector:
+    matchLabels:
+      timbo: sleeper
+  template:
+    metadata:
+      labels:
+        timbo: sleeper
+    spec:
+      containers:
+      - name: timbo-sleeper-ctr
+        image: timborafa/k8s-liveness-probe:sleeper
