@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: timbo-crasher
+  name: timbo-1m-crasher
   labels:
     app: timbo-crasher
     timbo: 1m-crasher

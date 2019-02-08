@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: timbo-sleeper
+  name: timbo-1m-sleeper
   labels:
     app: timbo-sleeper
     timbo: 1m-sleeper
