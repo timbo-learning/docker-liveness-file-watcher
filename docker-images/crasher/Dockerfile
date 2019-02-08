@@ -1,3 +1,3 @@
 FROM alpine
 
-CMD sh -c "sleep $(($RANDOM % 5 + 4))m; exit 1"
+CMD sh -c "sleep $(($RANDOM % 4 + 1))m; exit 1"
