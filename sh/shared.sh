@@ -23,7 +23,7 @@ refresh_alive_time() {
   else
     local _alive_window=$1
   fi
-  echo "$$ alive!"
+  echo "$(hostname) alive!"
   echo -n "$(unix_time_in_seconds),$_alive_window" > "$ALIVE_FILE"
   ((times_refreshed++))
 }

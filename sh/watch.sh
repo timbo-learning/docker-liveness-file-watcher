@@ -29,7 +29,7 @@ work() {
 }
 
 _sleep() {
-  echo "$((i++)): Sleeping for $sleep_time"
+  echo "$(hostname): Sleeping for $sleep_time #$((i++))"
   sleep $sleep_time
   # After 4 times, sleep longer
   # to emulate unresponsiveness.
