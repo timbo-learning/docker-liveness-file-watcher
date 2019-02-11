@@ -36,6 +36,10 @@ _sleep() {
   #if [[ $times_refreshed -ge $TIMES_TO_TURN_UNRESPONSIVE ]]; then
   #  sleep_time=$((3*REFRESH_TIME))
   #fi
+  if [[ -f "$DELAY_FILE" ]] ; then
+    sleep 1m
+    rm $DELAY_FILE
+  fi
 }
 main() {
 		while true; do

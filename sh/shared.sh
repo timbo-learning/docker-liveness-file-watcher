@@ -1,5 +1,6 @@
-TERMINATE_FILE="terminate.dat"
-ALIVE_FILE="alive.dat"
+TERMINATE_FILE="terminate.txt"
+ALIVE_FILE="alive.txt"
+DELAY_FILE="delay.txt"
 
 ALIVE_WINDOW="3"
 STARTUP_ALIVE_WINDOW="7"
