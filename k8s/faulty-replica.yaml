@@ -23,7 +23,9 @@ spec:
         lifecycle:
           preStop:
             exec:
-              command: ["/bin/bash", "-c", "/sh/stop.sh"]
+              command: #["/bin/bash",  "/sh/stop.sh"]
+              - /bin/bash
+              - /sh/stop.sh
         livenessProbe:
           initialDelaySeconds: 5 #reality 10 to 15s
           periodSeconds: 1
