@@ -37,6 +37,7 @@ _sleep() {
   #  sleep_time=$((3*REFRESH_TIME))
   #fi
   if [[ -f "$DELAY_FILE" ]] ; then
+    echo "Delaying for 1m"
     sleep 1m
     rm $DELAY_FILE
   fi
