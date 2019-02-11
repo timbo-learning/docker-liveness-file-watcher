@@ -29,7 +29,7 @@ work() {
 }
 
 _sleep() {
-  echo Sleeping for $sleep_time
+  echo "$((i++)): Sleeping for $sleep_time"
   sleep $sleep_time
   # After 4 times, sleep longer
   # to emulate unresponsiveness.
@@ -42,6 +42,7 @@ _sleep() {
   fi
 }
 main() {
+  i=0
 		while true; do
     if [ -f "$TERMINATE_FILE" ] ; then
       delete_terminate_file
