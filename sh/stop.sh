@@ -7,7 +7,7 @@ set -o nounset
  source ./sh/shared.sh
 
 main() {
-  echo "$$ stop.sh: touch $TERMINATE_FILE"
+  echo "$(hostname): stop.sh: touch $TERMINATE_FILE"
   # Create the termination file
   touch $TERMINATE_FILE
   # Wait for the application to terminate graciously
@@ -16,7 +16,7 @@ main() {
   # ? After the application has terminated, this
   # ? script will terminate as well.
   sleep 5s
-  echo "$$ stop.sh: exiting"
+  echo "$(hostname): stop.sh: exiting"
 }
 
 main "$@"

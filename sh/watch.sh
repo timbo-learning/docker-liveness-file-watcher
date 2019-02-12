@@ -16,7 +16,7 @@ refresh() {
     
     if (( elapsed >= alive_window )); then
       # Too much time not responding, stop
-      echo "watch:warning: took too long to update"
+      echo "$(hostname): watch.sh: warning: took too long to update"
     fi
       refresh_alive_time $ALIVE_WINDOW
   fi
@@ -37,7 +37,7 @@ _sleep() {
   #  sleep_time=$((3*REFRESH_TIME))
   #fi
   if [[ -f "$DELAY_FILE" ]] ; then
-    echo "Delaying for 1m"
+    echo "$(hostname): Delaying for 1m"
     sleep 1m
     rm $DELAY_FILE
   fi
@@ -54,9 +54,9 @@ main() {
     work
   done
 
-  echo "$$ watch.sh: Emulating termination work for ${DELAY_BEFORE_TERMINATION}s"
+  echo "$(hostname) watch.sh: Emulating termination work for ${DELAY_BEFORE_TERMINATION}s"
   sleep $DELAY_BEFORE_TERMINATION
-  echo "$$ watch.sh: Terminated gracefully"
+  echo "$(hostname) watch.sh: Terminated gracefully"
 }
 
 
