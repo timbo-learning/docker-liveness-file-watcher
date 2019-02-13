@@ -1,6 +1,7 @@
-TERMINATE_FILE="terminate.txt"
-ALIVE_FILE="alive.txt"
-DELAY_FILE="delay.txt"
+BASE_DIR="/app/"
+TERMINATE_FILE="${BASE_DIR}terminate.txt"
+ALIVE_FILE="${BASE_DIR}alive.txt"
+DELAY_FILE="${BASE_DIR}delay.txt"
 
 ALIVE_WINDOW="3"
 STARTUP_ALIVE_WINDOW="7"
