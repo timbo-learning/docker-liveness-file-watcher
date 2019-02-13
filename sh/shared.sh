@@ -1,4 +1,5 @@
-BASE_DIR="/app/"
+BASE_DIR="/app/$(hostname)/"
+mkdir -p $BASE_DIR
 TERMINATE_FILE="${BASE_DIR}terminate.txt"
 ALIVE_FILE="${BASE_DIR}alive.txt"
 DELAY_FILE="${BASE_DIR}delay.txt"
