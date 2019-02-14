@@ -16,7 +16,11 @@ spec:
       labels:
         timbo: watch-replica
     spec:
-      # Copied from watcher.yaml
+      volumes:
+      - name: liveness-volume
+        hostPath:
+          path: "/host_mnt/c/Users/rtimbo/tmp/app" # C:\Users\rtimbo\tmp\app # %homepath%\tmp\app
+          type: DirectoryOrCreate
       containers:
       - name: timbo-watch-ctr
         image: timborafa/k8s-liveness-probe:latest
@@ -33,3 +37,6 @@ spec:
             command:
             - bash
             - /sh/alive.sh
+        volumeMounts:
+        - mountPath: /app
+          name: liveness-volume
